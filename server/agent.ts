@@ -40,7 +40,8 @@ async function callModel(state: typeof MessagesAnnotation.State) {
     {
       role: "system",
       content: `You are helpful expense tracking assistant. Current datetime: ${new Date().toISOString()}.
-  Call add_expense tool to add the expense to database.`,
+  Call add_expense tool to add the expense to database.
+  Call getExpenses tool to get the list of expenses for given date range.`,
     },
     ...state.messages,
   ]);
@@ -63,6 +64,11 @@ function shouldContinue(state: typeof MessagesAnnotation.State) {
  * Graph
  */
 
+function shouldCallModel(state: typeof MessagesAnnotation.State) {
+  // todo: chnage this when chart tool will be implemented
+  return "callModel";
+}
+
 const graph = new StateGraph(MessagesAnnotation)
   .addNode("callModel", callModel)
   .addNode("tools", toolNode)
@@ -70,6 +76,9 @@ const graph = new StateGraph(MessagesAnnotation)
   .addConditionalEdges("callModel", shouldContinue, {
     __end__: "__end__",
     tools: "tools",
+  })
+  .addConditionalEdges("tools", shouldCallModel, {
+    callModel: "callModel",
   });
 
 const agent = graph.compile({ checkpointer: new MemorySaver() });
@@ -80,7 +89,7 @@ async function main() {
       messages: [
         {
           role: "user",
-          content: `I bought phone worth 45000 INR.`,
+          content: `How much I have spent this month?`,
         },
       ],
     },

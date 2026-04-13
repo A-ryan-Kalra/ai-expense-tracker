@@ -1,12 +1,45 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChatInput } from "./ChatInput";
 import { ChatMessage } from "./ChatMessage";
+import { fetchEventSource } from "@microsoft/fetch-event-source";
 
 export function ChatContainer() {
   const messageEndRef = useRef<HTMLDivElement>(null);
 
-  const [messages, setMessages] = useState<[]>([]);
+  const [messages, setMessages] = useState<string[]>([]);
 
+  useEffect(() => {
+    async function submitQuery() {
+      await fetchEventSource("http://localhost:4100/chat", {
+        onmessage(ev) {
+          console.log(ev.data);
+          setMessages((prev) => [...prev, ev.data]);
+        },
+        method: "POST",
+        headers: {
+          "Content-Type": `application/json`,
+        },
+        body: JSON.stringify({ query: "HI" }),
+      });
+    }
+    submitQuery();
+    // const evntSource = new EventSource("http://localhost:4100/chat");
+
+    // evntSource.addEventListener("open", () => {
+    //   console.log("connection opened!");
+    // });
+
+    // evntSource.addEventListener("message", (data) => {
+    //   console.log("Received message: ", data);
+    // });
+
+    // evntSource.addEventListener("cgPing", (eventName) => {
+    //   console.log("Received eventName: ", eventName.type);
+    //   setMessages((prev) => [...prev, eventName.data]);
+    // });
+  }, []);
+
+  console.log(messages);
   return (
     <div className="flex flex-col h-screen w-full bg-zinc-950">
       {/* Header */}
@@ -113,8 +146,9 @@ export function ChatContainer() {
               {/* Messages will be displayed here... */}
               {messages.map((message, idx) => {
                 return (
-                  <div key={idx}>
-                    <ChatMessage />
+                  <div key={idx} className="text-white">
+                    {message}
+                    {/* <ChatMessage /> */}
                   </div>
                 );
               })}

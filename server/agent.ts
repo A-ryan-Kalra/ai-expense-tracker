@@ -101,7 +101,7 @@ async function main() {
       messages: [
         {
           role: "user",
-          content: `Can you visualize how much I have spent this year 2026? groupping by date?`,
+          content: `Filthy fat rich guy? please help me with correct english sentence`,
         },
       ],
     },

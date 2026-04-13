@@ -96,19 +96,24 @@ const graph = new StateGraph(MessagesAnnotation)
 const agent = graph.compile({ checkpointer: new MemorySaver() });
 
 async function main() {
-  const response = await agent.invoke(
+  const response = await agent.stream(
     {
       messages: [
         {
           role: "user",
-          content: `Can you visualize how much I have spent this year 2026? groupping by months?`,
+          content: `Can you visualize how much I have spent this year 2026? groupping by date?`,
         },
       ],
     },
     {
       configurable: { thread_id: "1" },
+      streamMode: "messages",
     },
   );
+
+  for await (const chunk of response) {
+    console.log("Chunk", chunk);
+  }
 
   console.log(JSON.stringify(response, null, 2));
 }

@@ -1,0 +1,987 @@
+
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "01",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "01",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "\",\"",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "\",\"",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "to",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "to",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "\":\"",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "\":\"",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "202",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "202",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "6",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "6",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "-",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "-",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "12",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "12",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "-",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "-",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "31",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "31",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "\",\"",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "\",\"",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "group",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "group",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "By",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "By",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "\":\"",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "\":\"",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "date",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "date",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {
+      "tool_calls": [
+        {
+          "index": 0,
+          "function": "[Object]"
+        }
+      ]
+    },
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [
+      {
+        "args": "\"}",
+        "index": 0,
+        "type": "tool_call_chunk"
+      }
+    ],
+    "invalid_tool_calls": [
+      {
+        "name": "",
+        "args": "\"}",
+        "error": "Malformed args.",
+        "type": "invalid_tool_call"
+      }
+    ]
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DU4WT8X0nR94bfIhlKfyxAn6TObvF",
+    "content": "",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "usage": {
+        "prompt_tokens": 358,
+        "completion_tokens": 108,
+        "total_tokens": 466,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 64,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": [],
+    "usage_metadata": {
+      "input_tokens": 358,
+      "output_tokens": 108,
+      "total_tokens": 466,
+      "input_token_details": {
+        "audio": 0,
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "audio": 0,
+        "reasoning": 64
+      }
+    }
+  },
+  {
+    tags: [],
+    name: undefined,
+    ls_integration: 'langchain_chat_model',
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    __pregel_task_id: '5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    checkpoint_ns: 'callModel:5efcdd49-9f17-5dfb-a059-663fff2b09da',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined,
+    versions: { '@langchain/core': '1.1.39', '@langchain/openai': '1.4.4' }
+  }
+]
+Chunk [
+  ToolMessage {
+    "id": "50ffe888-0985-4cc7-9ed9-dc6e94479e58",
+    "content": "{\"type\":\"chart\",\"data\":[{\"date\":\"2026-04-12\",\"amount\":80000},{\"date\":\"2026-10-12\",\"amount\":45000}],\"labelKey\":\"date\"}",
+    "name": "generate_expense_chart",
+    "additional_kwargs": {},
+    "response_metadata": {},
+    "tool_call_id": "call_pJ7nRjpDsRr1z0WVfzkl2FP8"
+  },
+  {
+    tags: [ 'graph:step:2' ],
+    name: 'tools',
+    ls_integration: 'langgraph',
+    thread_id: '1',
+    langgraph_step: 2,
+    langgraph_node: 'tools',
+    langgraph_triggers: [ 'branch:to:tools' ],
+    langgraph_path: [ '__pregel_pull', 'tools' ],
+    langgraph_checkpoint_ns: 'tools:65b39f32-9086-559c-8516-363dd5fe8efc',
+    __pregel_task_id: '65b39f32-9086-559c-8516-363dd5fe8efc',
+    checkpoint_ns: 'tools:65b39f32-9086-559c-8516-363dd5fe8efc'
+  }
+]
+{
+  "reader": {},
+  "_abortController": {},
+  "_innerReader": {}
+}

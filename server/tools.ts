@@ -8,7 +8,7 @@ export function initTools(database: DatabaseSync) {
   */
   const addExpense = tool(
     ({ title, amount }) => {
-      console.log({ title, amount });
+      // console.log({ title, amount });
       // todo: do proper args validation
       const date = new Date().toISOString().split("T")[0];
 
@@ -36,13 +36,13 @@ export function initTools(database: DatabaseSync) {
 
   const getExpenses = tool(
     ({ from, to }) => {
-      console.log({ from, to });
+      // console.log({ from, to });
       // todo: do proper args validation
       const stmt = database.prepare(
         `SELECT * FROM expenses WHERE date BETWEEN ? AND ?`,
       );
       const rows = stmt.all(from, to);
-      console.log("rows", rows);
+      // console.log("rows", rows);
       return JSON.stringify(rows);
     },
     {
@@ -61,7 +61,7 @@ export function initTools(database: DatabaseSync) {
 
   const generateChart = tool(
     ({ from, to, groupBy }) => {
-      console.log("args", { from, to, groupBy });
+      // console.log("args", { from, to, groupBy });
       let sqlGroupBy: string;
 
       switch (groupBy) {

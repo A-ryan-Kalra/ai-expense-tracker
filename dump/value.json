@@ -1,0 +1,141 @@
+Chunk {
+  messages: [
+    HumanMessage {
+      "id": "b2a963df-8235-4af4-844a-541372840866",
+      "content": "Can you visualize how much I have spent this year 2026? groupping by date?",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    }
+  ]
+}
+Chunk {
+  messages: [
+    HumanMessage {
+      "id": "b2a963df-8235-4af4-844a-541372840866",
+      "content": "Can you visualize how much I have spent this year 2026? groupping by date?",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    },
+    AIMessage {
+      "id": "chatcmpl-DU3dwkwHQNAtmPnf5qlz3tF8cJUy4",
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "call_OxtDLLOiBgrjox5103EU4Ey6",
+            "type": "function",
+            "function": "[Object]"
+          }
+        ]
+      },
+      "response_metadata": {
+        "tokenUsage": {
+          "promptTokens": 358,
+          "completionTokens": 108,
+          "totalTokens": 466
+        },
+        "finish_reason": "tool_calls",
+        "model_provider": "openai",
+        "model_name": "gpt-5-mini-2025-08-07"
+      },
+      "tool_calls": [
+        {
+          "name": "generate_expense_chart",
+          "args": {
+            "from": "2026-01-01",
+            "to": "2026-12-31",
+            "groupBy": "date"
+          },
+          "type": "tool_call",
+          "id": "call_OxtDLLOiBgrjox5103EU4Ey6"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "output_tokens": 108,
+        "input_tokens": 358,
+        "total_tokens": 466,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 64
+        }
+      }
+    }
+  ]
+}
+Chunk {
+  messages: [
+    HumanMessage {
+      "id": "b2a963df-8235-4af4-844a-541372840866",
+      "content": "Can you visualize how much I have spent this year 2026? groupping by date?",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    },
+    AIMessage {
+      "id": "chatcmpl-DU3dwkwHQNAtmPnf5qlz3tF8cJUy4",
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "call_OxtDLLOiBgrjox5103EU4Ey6",
+            "type": "function",
+            "function": "[Object]"
+          }
+        ]
+      },
+      "response_metadata": {
+        "tokenUsage": {
+          "promptTokens": 358,
+          "completionTokens": 108,
+          "totalTokens": 466
+        },
+        "finish_reason": "tool_calls",
+        "model_provider": "openai",
+        "model_name": "gpt-5-mini-2025-08-07"
+      },
+      "tool_calls": [
+        {
+          "name": "generate_expense_chart",
+          "args": {
+            "from": "2026-01-01",
+            "to": "2026-12-31",
+            "groupBy": "date"
+          },
+          "type": "tool_call",
+          "id": "call_OxtDLLOiBgrjox5103EU4Ey6"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "output_tokens": 108,
+        "input_tokens": 358,
+        "total_tokens": 466,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 64
+        }
+      }
+    },
+    ToolMessage {
+      "id": "43cf3897-b438-4d0b-8ddd-45a331dc9617",
+      "content": "{\"type\":\"chart\",\"data\":[{\"date\":\"2026-04-12\",\"amount\":80000},{\"date\":\"2026-10-12\",\"amount\":45000}],\"labelKey\":\"date\"}",
+      "name": "generate_expense_chart",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "tool_call_id": "call_OxtDLLOiBgrjox5103EU4Ey6"
+    }
+  ]
+}
+{
+  "reader": {},
+  "_abortController": {},
+  "_innerReader": {}
+}

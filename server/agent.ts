@@ -7,7 +7,7 @@ import {
 import { initDB } from "./db.ts";
 import { initTools } from "./tools.ts";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
-import { AIMessage } from "@langchain/core/messages";
+import { AIMessage, ToolMessage } from "@langchain/core/messages";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -39,9 +39,12 @@ async function callModel(state: typeof MessagesAnnotation.State) {
   const response = await llmWithTools.invoke([
     {
       role: "system",
-      content: `You are helpful expense tracking assistant. Current datetime: ${new Date().toISOString()}.
-  Call add_expense tool to add the expense to database.
-  Call getExpenses tool to get the list of expenses for given date range.`,
+      content: `
+You are helpful expense tracking assistant. Current datetime: ${new Date().toISOString()}.
+Call add_expense tool to add the expense to database.
+Call getExpenses tool to get the list of expenses for given date range.
+Call generate_expense_char tool only when user needs to visualize the expenses.
+  `,
     },
     ...state.messages,
   ]);
@@ -66,6 +69,14 @@ function shouldContinue(state: typeof MessagesAnnotation.State) {
 
 function shouldCallModel(state: typeof MessagesAnnotation.State) {
   // todo: chnage this when chart tool will be implemented
+  const messages = state.messages;
+  const lastMessages = messages.at(-1) as ToolMessage;
+
+  const message = JSON.parse(lastMessages.content as string);
+  if (message.type === "chart") {
+    return "__end__";
+  }
+
   return "callModel";
 }
 
@@ -79,6 +90,7 @@ const graph = new StateGraph(MessagesAnnotation)
   })
   .addConditionalEdges("tools", shouldCallModel, {
     callModel: "callModel",
+    __end__: "__end__",
   });
 
 const agent = graph.compile({ checkpointer: new MemorySaver() });
@@ -89,7 +101,7 @@ async function main() {
       messages: [
         {
           role: "user",
-          content: `How much I have spent this month?`,
+          content: `Can you visualize how much I have spent this year 2026? groupping by months?`,
         },
       ],
     },

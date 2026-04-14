@@ -1,45 +1,89 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ChatInput } from "./ChatInput";
 import { ChatMessage } from "./ChatMessage";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
-
+import type { StreamMessage } from "../types.ts";
 export function ChatContainer() {
   const messageEndRef = useRef<HTMLDivElement>(null);
 
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<StreamMessage[]>([]);
 
-  useEffect(() => {
-    async function submitQuery() {
-      await fetchEventSource("http://localhost:4100/chat", {
-        onmessage(ev) {
-          console.log(ev.data);
-          setMessages((prev) => [...prev, ev.data]);
+  async function submitQuery(userInput: string) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: Date.now().toString(),
+        type: "user",
+        payload: {
+          text: userInput,
         },
-        method: "POST",
-        headers: {
-          "Content-Type": `application/json`,
-        },
-        body: JSON.stringify({ query: "HI" }),
-      });
-    }
-    submitQuery();
-    // const evntSource = new EventSource("http://localhost:4100/chat");
+      },
+    ]);
 
-    // evntSource.addEventListener("open", () => {
-    //   console.log("connection opened!");
-    // });
+    await fetchEventSource("http://localhost:4100/chat", {
+      onmessage(ev) {
+        // console.log(ev.event);
+        const parsedData = JSON.parse(ev.data) as StreamMessage;
 
-    // evntSource.addEventListener("message", (data) => {
-    //   console.log("Received message: ", data);
-    // });
+        if (parsedData.type === "ai") {
+          setMessages((prev) => {
+            const lastMessage = prev[prev.length - 1];
+            if (lastMessage && lastMessage.type === "ai") {
+              //append to last message
+              const clonedMessages = [...prev];
 
-    // evntSource.addEventListener("cgPing", (eventName) => {
-    //   console.log("Received eventName: ", eventName.type);
-    //   setMessages((prev) => [...prev, eventName.data]);
-    // });
-  }, []);
+              clonedMessages[clonedMessages.length - 1] = {
+                ...lastMessage,
+                payload: {
+                  text: lastMessage.payload.text + parsedData.payload.text,
+                },
+              };
+              return clonedMessages;
+            } else {
+              return [
+                ...prev,
+                {
+                  id: Date.now().toString(),
+                  type: "ai",
+                  payload: parsedData.payload,
+                },
+              ];
+            }
+          });
+        }
+      },
+      method: "POST",
+      headers: {
+        "Content-Type": `application/json`,
+      },
+      body: JSON.stringify({ query: userInput }),
+    });
+  }
 
-  console.log(messages);
+  // Declare SSE events on client
+  //   useEffect(() => {
+  // submitQuery();
+  // const evntSource = new EventSource("http://localhost:4100/chat");
+
+  // evntSource.addEventListener("open", () => {
+  //   console.log("connection opened!");
+  // });
+
+  // evntSource.addEventListener("message", (data) => {
+  //   console.log("Received message: ", data);
+  // });
+
+  // evntSource.addEventListener("cgPing", (eventName) => {
+  //   console.log("Received eventName: ", eventName.type);
+  //   setMessages((prev) => [...prev, eventName.data]);
+  // });
+  //   }, []);
+
+  const onSubmit = (data: string) => {
+    submitQuery(data);
+  };
+
+  // console.log(messages);
   return (
     <div className="flex flex-col h-screen w-full bg-zinc-950">
       {/* Header */}
@@ -146,9 +190,8 @@ export function ChatContainer() {
               {/* Messages will be displayed here... */}
               {messages.map((message, idx) => {
                 return (
-                  <div key={idx} className="text-white">
-                    {message}
-                    {/* <ChatMessage /> */}
+                  <div key={message.id} className="text-white">
+                    <ChatMessage message={message} />
                   </div>
                 );
               })}
@@ -161,7 +204,7 @@ export function ChatContainer() {
 
       {/* Input Area */}
       <div className="shrink-0 w-full">
-        <ChatInput />
+        <ChatInput onSubmit={onSubmit} />
       </div>
     </div>
   );

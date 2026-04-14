@@ -1,11 +1,50 @@
-export function ChatInput() {
+import { useRef, useState } from "react";
+
+type Props = {
+  onSubmit: (data: string) => void;
+};
+export function ChatInput({ onSubmit }: Props) {
+  const [input, setInput] = useState("");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const userInput = input.trim();
+
+    if (userInput) {
+      console.log("You typed:", input.trim());
+      onSubmit(input);
+      setInput("");
+      if (textareaRef.current) {
+        textareaRef.current.style.height = "auto";
+      }
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+
+      onSubmit(input);
+      setInput("");
+      if (textareaRef.current) {
+        textareaRef.current.style.height = "auto";
+      }
+    }
+  };
+
   return (
     <div className="bg-zinc-950 backdrop-blur-xl w-full">
       <div className="w-full max-w-5xl mx-auto p-2">
-        <form className="relative">
+        <form onSubmit={handleSubmit} className="relative">
           <div className="relative flex items-end gap-3 bg-zinc-900 rounded-3xl border-zinc-600 focus-within:border-purple-500 transition-all shadow-2xl">
             <textarea
+              ref={textareaRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
               placeholder="Send a message..."
+              onKeyDown={handleKeyDown}
               disabled={false}
               rows={1}
               className="flex-1 bg-transparent text-white placeholder-zinc-400 px-6 py-6 resize-none focus:outline-none max-h-48 overflow-y-auto disabled:opacity-50 text-base"

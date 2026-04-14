@@ -1,6 +1,7 @@
 import { DatabaseSync } from "node:sqlite";
 import { tool } from "@langchain/core/tools";
 import { z } from "zod";
+import type { LangGraphRunnableConfig } from "@langchain/langgraph";
 
 export function initTools(database: DatabaseSync) {
   /* 
@@ -35,8 +36,11 @@ export function initTools(database: DatabaseSync) {
  */
 
   const getExpenses = tool(
-    ({ from, to }) => {
+    ({ from, to }, config: LangGraphRunnableConfig) => {
       // console.log({ from, to });
+
+      // Stream any arnitary data
+      // config.writer?.(`Looking up data for your expense`);
       // todo: do proper args validation
       const stmt = database.prepare(
         `SELECT * FROM expenses WHERE date BETWEEN ? AND ?`,

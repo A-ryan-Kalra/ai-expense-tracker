@@ -23,6 +23,7 @@ export function ChatContainer() {
     await fetchEventSource("http://localhost:4100/chat", {
       onmessage(ev) {
         // console.log(ev.event);
+        messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
         const parsedData = JSON.parse(ev.data) as StreamMessage;
 
         if (parsedData.type === "ai") {
@@ -49,6 +50,17 @@ export function ChatContainer() {
                 },
               ];
             }
+          });
+        } else if (parsedData.type === "toolCall:start") {
+          setMessages((prev) => {
+            return [
+              ...prev,
+              {
+                type: "toolCall:start",
+                payload: parsedData.payload,
+                id: Date.now().toString(),
+              },
+            ];
           });
         }
       },
@@ -80,6 +92,7 @@ export function ChatContainer() {
   //   }, []);
 
   const onSubmit = (data: string) => {
+    messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
     submitQuery(data);
   };
 

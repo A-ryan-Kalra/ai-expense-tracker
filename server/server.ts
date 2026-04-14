@@ -33,22 +33,29 @@ app.post("/chat", async (req, res) => {
       ],
     },
     {
-      streamMode: ["messages"],
+      streamMode: ["messages", "custom"],
       // todo: generate dynamically
       configurable: { thread_id: "1" },
     },
   );
 
   for await (const [eventType, chunk] of response) {
-    console.log("Chunk", JSON.stringify(chunk[0].content, null, 2));
+    console.log("eventType", eventType);
+    // console.log("Chunk", JSON.stringify(chunk[0].content, null, 2));
     let message: StreamMessage = {} as StreamMessage;
-    const messageType = chunk[0].type;
 
-    if (messageType === "ai") {
-      message = {
-        type: "ai",
-        payload: { text: chunk[0].content as string },
-      };
+    if (eventType === "custom") {
+      console.log("chunk", chunk);
+      message = chunk;
+    } else if (eventType === "messages") {
+      if (chunk[0].content === "") continue;
+      const messageType = chunk[0].type;
+      if (messageType === "ai") {
+        message = {
+          type: "ai",
+          payload: { text: chunk[0].content as string },
+        };
+      }
     }
 
     res.write(`event: cgPing\n`);

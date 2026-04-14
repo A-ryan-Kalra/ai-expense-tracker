@@ -3,12 +3,14 @@ import {
   MemorySaver,
   MessagesAnnotation,
   StateGraph,
+  type LangGraphRunnableConfig,
 } from "@langchain/langgraph";
 import { initDB } from "./db.ts";
 import { initTools } from "./tools.ts";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { AIMessage, ToolMessage } from "@langchain/core/messages";
 import dotenv from "dotenv";
+import type { StreamMessage } from "./types.ts";
 
 dotenv.config();
 /*
@@ -54,10 +56,22 @@ Call generate_expense_char tool only when user needs to visualize the expenses.
 /* 
  Conditional Edge
  */
-function shouldContinue(state: typeof MessagesAnnotation.State) {
+function shouldContinue(
+  state: typeof MessagesAnnotation.State,
+  config: LangGraphRunnableConfig,
+) {
   const messages = state.messages;
   const lastMessages = messages.at(-1) as AIMessage;
   if (lastMessages.tool_calls?.length) {
+    // send custom events
+    const customMessage: StreamMessage = {
+      type: "toolCall:start",
+      payload: {
+        name: lastMessages.tool_calls[0]?.name as string,
+        args: lastMessages.tool_calls[0]?.args as StreamMessage,
+      },
+    };
+    config.writer!(customMessage);
     return "tools";
   }
   return "__end__";

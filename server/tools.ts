@@ -103,7 +103,11 @@ ORDER BY period
         };
       });
 
-      return JSON.stringify({ type: "chart", data: result, labelKey: groupBy });
+      return JSON.stringify({
+        type: "chart",
+        data: result,
+        labelKey: groupBy,
+      });
     },
     {
       name: "generate_expense_chart",

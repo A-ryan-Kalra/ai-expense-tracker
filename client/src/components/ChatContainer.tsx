@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChatInput } from "./ChatInput";
 import { ChatMessage } from "./ChatMessage";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
@@ -7,6 +7,12 @@ export function ChatContainer() {
   const messageEndRef = useRef<HTMLDivElement>(null);
 
   const [messages, setMessages] = useState<StreamMessage[]>([]);
+
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, [messages]);
 
   async function submitQuery(userInput: string) {
     setMessages((prev) => [
@@ -23,7 +29,7 @@ export function ChatContainer() {
     await fetchEventSource("http://localhost:4100/chat", {
       onmessage(ev) {
         // console.log(ev.event);
-        messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+
         const parsedData = JSON.parse(ev.data) as StreamMessage;
 
         if (parsedData.type === "ai") {
@@ -57,6 +63,17 @@ export function ChatContainer() {
               ...prev,
               {
                 type: "toolCall:start",
+                payload: parsedData.payload,
+                id: Date.now().toString(),
+              },
+            ];
+          });
+        } else if (parsedData.type === "tool") {
+          setMessages((prev) => {
+            return [
+              ...prev,
+              {
+                type: "tool",
                 payload: parsedData.payload,
                 id: Date.now().toString(),
               },
@@ -203,7 +220,7 @@ export function ChatContainer() {
               {/* Messages will be displayed here... */}
               {messages.map((message, idx) => {
                 return (
-                  <div key={message.id} className="text-white">
+                  <div key={message.id + idx} className="text-white">
                     <ChatMessage message={message} />
                   </div>
                 );

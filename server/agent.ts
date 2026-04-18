@@ -108,28 +108,3 @@ const graph = new StateGraph(MessagesAnnotation)
   });
 
 export const agent = graph.compile({ checkpointer: new MemorySaver() });
-
-// async function main() {
-//   const response = await agent.stream(
-//     {
-//       messages: [
-//         {
-//           role: "user",
-//           content: `Filthy fat rich guy? please help me with correct english sentence`,
-//         },
-//       ],
-//     },
-//     {
-//       configurable: { thread_id: "1" },
-//       streamMode: "messages",
-//     },
-//   );
-
-//   for await (const chunk of response) {
-//     console.log("Chunk", chunk);
-//   }
-
-//   console.log(JSON.stringify(response, null, 2));
-// }
-
-// main();

@@ -13,13 +13,19 @@ export function initTools(database: DatabaseSync) {
       // todo: do proper args validation
       const date = new Date().toISOString().split("T")[0];
 
-      //todo: add Error handling
-      const stmt = database.prepare(
-        `Insert into expenses (title, amount, date) VALUES (?, ?, ?)`,
-      );
-      stmt.run(title, amount, date);
-
-      return JSON.stringify({ status: "success!" });
+      try {
+        const stmt = database.prepare(
+          `Insert into expenses (title, amount, date) VALUES (?, ?, ?)`,
+        );
+        stmt.run(title, amount, date);
+        return JSON.stringify({ status: "success!" });
+      } catch (error) {
+        console.error("Failed to add expense:", error);
+        return JSON.stringify({
+          status: "error",
+          message: "Failed to add expense",
+        });
+      }
     },
     {
       name: "add_expense",

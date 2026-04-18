@@ -3,6 +3,7 @@ import { ChatInput } from "./ChatInput";
 import { ChatMessage } from "./ChatMessage";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
 import type { StreamMessage } from "../types.ts";
+
 export function ChatContainer() {
   const messageEndRef = useRef<HTMLDivElement>(null);
 
@@ -26,7 +27,7 @@ export function ChatContainer() {
       },
     ]);
 
-    await fetchEventSource("http://localhost:4100/chat", {
+    await fetchEventSource(`${import.meta.env.VITE_LIVE_URL}/api/chat`, {
       onmessage(ev) {
         // console.log(ev.event);
 

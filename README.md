@@ -85,4 +85,19 @@ User → React Frontend → Express Backend → LangChain + OpenAI
    - Charts  
    - Insights  
 
----
+## 📦 Installation
+- Set up environment variables.
+- You will find the `.env.example` file stored in the server and client directory.
+- Assign with Your `OPEN_API_KEY`.
+
+```bash
+# Clone the repo
+git clone https://github.com/A-ryan-Kalra/ai-expense-tracker
+cd ai-expense-tracker
+
+# Install dependencies
+npm install
+
+# Run the app
+npm run dev
+```
